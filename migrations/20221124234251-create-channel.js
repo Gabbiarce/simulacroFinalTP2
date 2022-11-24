@@ -18,6 +18,9 @@ module.exports = {
       categoryId: {
         type: Sequelize.INTEGER
       },
+      deviceId: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

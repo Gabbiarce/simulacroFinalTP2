@@ -10,13 +10,16 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Channel.belongsTo(models.Device)
+      Channel.belongsTo(models.Category)
+      Channel.hasMany(models.Favorite)
     }
   }
   Channel.init({
     name: DataTypes.STRING,
     logo_url: DataTypes.STRING,
-    categoryId: DataTypes.INTEGER
+    categoryId: DataTypes.INTEGER,
+    deviceId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Channel',
