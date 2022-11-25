@@ -16,13 +16,26 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Channel.init({
-    name: DataTypes.STRING,
-    logo_url: DataTypes.STRING,
-    categoryId: DataTypes.INTEGER,
-    deviceId: DataTypes.INTEGER
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    logo_url: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    categoryId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    deviceId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Channel',
+    tableName: 'Channels',
   });
   return Channel;
 };

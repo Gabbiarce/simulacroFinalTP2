@@ -14,10 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Favorite.init({
-    channelId: DataTypes.INTEGER
+    channelId: {
+      type: DataTypes.INTEGER
+    }
   }, {
     sequelize,
     modelName: 'Favorite',
+    tableName: 'Favorites',
   });
   return Favorite;
 };

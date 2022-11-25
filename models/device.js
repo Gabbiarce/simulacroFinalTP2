@@ -14,10 +14,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Device.init({
-    identifier: DataTypes.STRING
+    identifier: {
+      type: DataTypes.STRING(12),
+      allowNull: false
+    }
   }, {
     sequelize,
     modelName: 'Device',
+    tableName: 'Devices',
   });
   return Device;
 };
